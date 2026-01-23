@@ -1,23 +1,9 @@
-[package]
-name = "sos"
-version = "0.1.0"
-authors = ["Stephen Marz <stephen.marz@utk.edu>"]
-edition = "2024"
+[workspace]
+members=["kernel", "crates/*"]
+default-members=["kernel"]
+resolver="2"
 
-# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
-
-[profile.dev]
-opt-level = 0
-lto = false
-
-[profile.release]
-opt-level = 3
-lto = true
-codegen-units = 1
-
-[dependencies]
-
-[[bin]]
-name = "sos"
-test = false
-bench = false
+[workspace.package]
+edition="2024"
+license="MIT OR Apache-2.0"
+rust-version="1.92"
